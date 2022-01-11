@@ -249,7 +249,7 @@ public class VentanaCierreVenta extends JFrame {
 				lblNewLabel_1.setBounds(47, 317, 48, 44);
 				contentPane.add(lblNewLabel_1);
 				
-				JButton btnPdfInventario = new JButton("Inventario PDF");
+				JButton btnPdfInventario = new JButton("Inventario PDF"); /*Se crea el botón para generar reporte de inventario*/
 				btnPdfInventario.setFont(new Font("Josefin Sans", Font.PLAIN, 16));
 				btnPdfInventario.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
