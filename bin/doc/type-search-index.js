@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"mx.uam.ayd.proyecto.presentacion.recepcionMercancia","l":"VentanaRecepcionMercancia"}]
