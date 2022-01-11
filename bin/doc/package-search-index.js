@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"mx.uam.ayd.proyecto.presentacion.recepcionMercancia"}]
