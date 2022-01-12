@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
+import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -187,5 +188,69 @@ public class ControlCierreVenta {
 			
 			doc.close();
 		}
+	
+
+	public void generaInventarioPdf(JTable tab) {
+		
+		String path = " ";
+		JFileChooser j = new JFileChooser();
+		j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+		int x = j.showSaveDialog(null);
+		
+		if(x==JFileChooser.APPROVE_OPTION) {
+			path = j.getSelectedFile().getPath();
+			JOptionPane.showMessageDialog(null, "PDF generado exitosamente");
+		}else
+			JOptionPane.showMessageDialog(null,"Acción Cancelada");
+		
+		Document doc = new Document(PageSize.A4.rotate());
+		
+		try {
+			PdfWriter.getInstance(doc, new FileOutputStream(path+".pdf"));
+			
+			doc.open();
+			Font fuente = new Font();
+			Font fuente1 = new Font();
+			fuente.setSize(20);
+			fuente1.setSize(9);
+			//PdfFont font = PdfFontFactory.createFont(FontConstants.TIMES_ITALIC); 
+			
+			doc.add(new Paragraph("\t Inventario del día\n",fuente));
+			doc.add(new Paragraph("\n "));
+			
+			PdfPTable tb = new PdfPTable(5);
+			
+			tb.addCell("Nombre");	
+			tb.addCell("Compuesto");
+			tb.addCell("Total de productos");
+			tb.addCell("Precio");
+			tb.addCell("Receta");
+			
+			for (int i = 0; i<tab.getRowCount(); i++) {
+				String nombre = tab.getValueAt(i, 0).toString();
+				String compuesto = tab.getValueAt(i, 1).toString();
+				String totalProducto = tab.getValueAt(i, 2).toString();
+				String precio = tab.getValueAt(i, 3).toString();
+				String receta = tab.getValueAt(i, 4).toString();
+				
+				tb.addCell(nombre);
+				tb.addCell(compuesto);
+				tb.addCell(totalProducto);
+				tb.addCell(precio);
+				tb.addCell(receta);
+			}
+			
+			doc.add(tb);
+			
+		}catch(FileNotFoundException ex) {
+			System.out.println("Error, no se pudo generar PDF");
+		} catch (DocumentException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		doc.close();
+	}
+	
 	
 }

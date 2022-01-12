@@ -158,7 +158,7 @@ public class VentanaCierreVenta extends JFrame {
 					}
 				});
 		
-		//Boton para generar PDF ---------------
+		//Boton para generar PDF de ventas---------------
 		JButton btnGenera = new JButton("Ventas PDF");
 		btnGenera.setFont(new Font("Josefin Sans", Font.PLAIN, 16));
 		btnGenera.setBounds(119, 391, 137, 30);
@@ -249,10 +249,12 @@ public class VentanaCierreVenta extends JFrame {
 				lblNewLabel_1.setBounds(47, 317, 48, 44);
 				contentPane.add(lblNewLabel_1);
 				
-				JButton btnPdfInventario = new JButton("Inventario PDF"); /*Se crea el botón para generar reporte de inventario*/
+				//Botón que genera pdf de inventario---
+				JButton btnPdfInventario = new JButton("Inventario PDF"); 
 				btnPdfInventario.setFont(new Font("Josefin Sans", Font.PLAIN, 16));
 				btnPdfInventario.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						control.generaInventarioPdf(tabla_inventario);
 					}
 				});
 				btnPdfInventario.setBounds(119, 326, 153, 30);
