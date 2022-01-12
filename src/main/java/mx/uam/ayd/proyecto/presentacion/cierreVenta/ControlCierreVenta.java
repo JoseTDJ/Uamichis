@@ -12,13 +12,16 @@ import javax.swing.JTable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
-import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.PageSize;
 
 import mx.uam.ayd.proyecto.negocio.ServicioCliente;
 import mx.uam.ayd.proyecto.negocio.ServicioPedidoCliente;
@@ -190,7 +193,7 @@ public class ControlCierreVenta {
 		}
 	
 
-	public void generaInventarioPdf(JTable tab) {
+	public void generaInventarioPdf(JTable tab1) { //Método que genera un pdf del inventario
 		
 		String path = " ";
 		JFileChooser j = new JFileChooser();
@@ -202,51 +205,70 @@ public class ControlCierreVenta {
 			JOptionPane.showMessageDialog(null, "PDF generado exitosamente");
 		}else
 			JOptionPane.showMessageDialog(null,"Acción Cancelada");
-		
-		Document doc = new Document(PageSize.A4.rotate());
-		
+			Document doc = new Document(PageSize.A4.rotate()); //Pagina en horizontal
+			
 		try {
 			PdfWriter.getInstance(doc, new FileOutputStream(path+".pdf"));
 			
 			doc.open();
-			Font fuente = new Font();
-			Font fuente1 = new Font();
-			fuente.setSize(20);
-			fuente1.setSize(9);
-			//PdfFont font = PdfFontFactory.createFont(FontConstants.TIMES_ITALIC); 
 			
-			doc.add(new Paragraph("\t Inventario del día\n",fuente));
-			doc.add(new Paragraph("\n "));
+			Paragraph tittle = new Paragraph ("Inventario del día\n\n\n",
+					FontFactory.getFont("Josefin Sans", 22, Font.BOLD, BaseColor.RED)
+					);
 			
-			PdfPTable tb = new PdfPTable(5);
+			tittle.setAlignment(Element.ALIGN_CENTER); 
+			doc.add(tittle); 
 			
-			tb.addCell("Nombre");	
-			tb.addCell("Compuesto");
-			tb.addCell("Total de productos");
-			tb.addCell("Precio");
-			tb.addCell("Receta");
 			
-			for (int i = 0; i<tab.getRowCount(); i++) {
-				String nombre = tab.getValueAt(i, 0).toString();
-				String compuesto = tab.getValueAt(i, 1).toString();
-				String totalProducto = tab.getValueAt(i, 2).toString();
-				String precio = tab.getValueAt(i, 3).toString();
-				String receta = tab.getValueAt(i, 4).toString();
+			PdfPTable tb1 = new PdfPTable(5);
+			
+			Paragraph nom = new Paragraph ("Nombre",
+					FontFactory.getFont("Josefin Sans", 14, Font.BOLD, BaseColor.BLACK)
+					);
+			
+			Paragraph comp = new Paragraph ("Compuesto",
+					FontFactory.getFont("Josefin Sans", 14, Font.BOLD, BaseColor.BLACK)
+					);
+			
+			Paragraph tot = new Paragraph ("Total de productos",
+					FontFactory.getFont("Josefin Sans", 14, Font.BOLD, BaseColor.BLACK)
+					);
+			
+			Paragraph prec = new Paragraph ("Precio",
+					FontFactory.getFont("Josefin Sans", 14, Font.BOLD, BaseColor.BLACK)
+					);
+			
+			Paragraph recet = new Paragraph ("Receta",
+					FontFactory.getFont("Josefin Sans", 14, Font.BOLD, BaseColor.BLACK)
+					);
+			
+			tb1.addCell(nom);	
+			tb1.addCell(comp);
+			tb1.addCell(tot);
+			tb1.addCell(prec);
+			tb1.addCell(recet);
+			
+			for (int i = 0; i<tab1.getRowCount(); i++) {
+				String nombre = tab1.getValueAt(i, 0).toString();
+				String compuesto = tab1.getValueAt(i, 1).toString();
+				String totalProducto = tab1.getValueAt(i, 2).toString();
+				String precio = tab1.getValueAt(i, 3).toString();
+				String receta = tab1.getValueAt(i, 4).toString();
 				
-				tb.addCell(nombre);
-				tb.addCell(compuesto);
-				tb.addCell(totalProducto);
-				tb.addCell(precio);
-				tb.addCell(receta);
+				tb1.addCell(nombre);
+				tb1.addCell(compuesto);
+				tb1.addCell(totalProducto);
+				tb1.addCell(precio);
+				tb1.addCell(receta);
 			}
 			
-			doc.add(tb);
+			doc.add(tb1);
 			
 		}catch(FileNotFoundException ex) {
 			System.out.println("Error, no se pudo generar PDF");
-		} catch (DocumentException e1) {
+		} catch (DocumentException e2) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			e2.printStackTrace();
 		}
 		
 		doc.close();
