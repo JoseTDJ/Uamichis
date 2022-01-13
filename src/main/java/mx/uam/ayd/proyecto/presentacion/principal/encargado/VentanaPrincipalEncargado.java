@@ -106,6 +106,20 @@ public class VentanaPrincipalEncargado extends JFrame {
 				btnNewButtonMonitoreo.setBounds(311, 208, 132, 39);
 				contentPane.add(btnNewButtonMonitoreo);
 				
+				/**
+				 * BOTON HU-07 ASISTENCIAS JOSE
+				 */
+				JButton btnNewButton = new JButton("Asistencias");
+				btnNewButton.setFont(new Font("Josefin Sans", Font.PLAIN, 16));
+				btnNewButton.setBounds(280, 278, 132, 39);
+				btnNewButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						//control.asistenciasEmp(empleado);
+					}
+				});
+				//btnNewButton.setBounds(80, 278, 192, 21);
+				contentPane.add(btnNewButton);
+				
 				JButton btnNewButtonBusqueda = new JButton("Busqueda");
 				btnNewButtonBusqueda.setFont(new Font("Josefin Sans", Font.PLAIN, 16));
 				btnNewButtonBusqueda.setBounds(61, 77, 158, 39);
