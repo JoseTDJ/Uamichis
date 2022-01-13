@@ -117,7 +117,39 @@ public class ventanaAsistencias extends JFrame {
 		
 		barrabuscar = new JTextField();
 		barrabuscar.setBounds(222, 45, 404, 25);
-	
+		/**
+		 * Permite filtrar los datos de la tabla para encontrar a un empleado especifico
+		 */
+		barrabuscar.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				
+				TableRowSorter<TableModel> elQueOrdena = new TableRowSorter<TableModel>(modelo);
+				tablaAsistencias.setRowSorter(elQueOrdena);
+				//botonBuscar.setEnabled(barrabuscar.getText().length() != 0);
+				elQueOrdena.setRowFilter(RowFilter.regexFilter(barrabuscar.getText(), 1));
+			}
+		});
+		barrabuscar.setColumns(10);
+		panel_1.add(barrabuscar);
+		
+		lblNewLabel = new JLabel("Escriba el nombre de un empleado en la barra de búsqueda para obtener sus datos.");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		lblNewLabel.setBounds(222, 10, 404, 28);
+		panel_1.add(lblNewLabel);
+		
+		lblNombre = new JLabel("Nombre:");
+		lblNombre.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNombre.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		lblNombre.setEnabled(false);
+		lblNombre.setBounds(0, 46, 210, 23);
+		panel_1.add(lblNombre);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBounds(10, 375, 636, 57);
+		contentPane.add(panel_3);
+		panel_3.setLayout(null);
 	}
 	
 }
