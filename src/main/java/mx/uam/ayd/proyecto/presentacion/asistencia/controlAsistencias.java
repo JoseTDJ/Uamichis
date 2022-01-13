@@ -24,4 +24,7 @@ public class controlAsistencias {
 	private ServicioAsistencia servicioAsistencia;
 	@Autowired
 	private ServicioEmpleado servicioEmpleado;
+	
+	
+	
 }

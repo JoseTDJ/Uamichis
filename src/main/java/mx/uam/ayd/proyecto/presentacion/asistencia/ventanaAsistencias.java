@@ -70,5 +70,54 @@ public class ventanaAsistencias extends JFrame {
 	private Asistencia asistencia;
 	private JLabel lblNewLabel;
 	private JLabel lblNombre;
+	//Creacion del frame
+	
+	public ventanaAsistencias() {
+		setTitle("Farmapass - Control de Asistencias");
+		setResizable(false);
+		setBounds(100, 100, 662, 470);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(10, 0, 636, 44);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		encargo = new JTextField();
+		encargo.setEditable(false);
+		encargo.setBounds(10, 10, 200, 28);
+		panel.add(encargo);
+		encargo.setColumns(10);
+		
+		nombreEmpleado = new JTextField();
+		nombreEmpleado.setEditable(false);
+		nombreEmpleado.setColumns(10);
+		nombreEmpleado.setBounds(220, 10, 216, 28);
+		panel.add(nombreEmpleado);
+		
+		idEmpleado = new JTextField();
+		idEmpleado.setEditable(false);
+		idEmpleado.setColumns(10);
+		idEmpleado.setBounds(446, 10, 200, 28);
+		panel.add(idEmpleado);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(10, 44, 636, 80);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		fecha = new JTextField();
+		fecha.setBounds(10, 10, 200, 28);
+		fecha.setEditable(false);
+		fecha.setColumns(10);
+		panel_1.add(fecha);
+		
+		barrabuscar = new JTextField();
+		barrabuscar.setBounds(222, 45, 404, 25);
+	
+	}
 	
 }
