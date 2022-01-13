@@ -28,6 +28,7 @@ import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.SystemColor;
 import java.awt.event.ActionListener;
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
@@ -150,6 +151,40 @@ public class ventanaAsistencias extends JFrame {
 		panel_3.setBounds(10, 375, 636, 57);
 		contentPane.add(panel_3);
 		panel_3.setLayout(null);
+		
+		JButton botonRegresar = new JButton("Regresar");
+		botonRegresar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				setVisible(false);
+				//limpiaTabla();
+			}
+		});
+		botonRegresar.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		botonRegresar.setBounds(185, 11, 125, 30);
+		panel_3.add(botonRegresar);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 134, 528, 231);
+		contentPane.add(scrollPane);
+		
+		tablaAsistencias = new JTable();
+		tablaAsistencias.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		tablaAsistencias.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		modelo.addColumn("ID");
+		modelo.addColumn("Nombre");
+		modelo.addColumn("Cargo");
+		modelo.addColumn("Telefono");
+		modelo.addColumn("Asistencias");
+		scrollPane.setViewportView(tablaAsistencias);
+		
+		JPanel panel_1_1 = new JPanel();
+		panel_1_1.setLayout(null);
+		panel_1_1.setBackground(SystemColor.textHighlight);
+		panel_1_1.setBounds(551, 120, 95, 312);
+		contentPane.add(panel_1_1);
+		
+	
+		
 	}
 	
 }

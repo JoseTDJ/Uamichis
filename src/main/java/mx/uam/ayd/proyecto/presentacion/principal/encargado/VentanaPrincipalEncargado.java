@@ -114,7 +114,7 @@ public class VentanaPrincipalEncargado extends JFrame {
 				btnNewButton.setBounds(280, 278, 132, 39);
 				btnNewButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						//control.asistenciasEmp(empleado);
+						control.asistenciasEmp(empleado);
 					}
 				});
 				//btnNewButton.setBounds(80, 278, 192, 21);

@@ -25,6 +25,10 @@ public class controlAsistencias {
 	@Autowired
 	private ServicioEmpleado servicioEmpleado;
 	
-	
+	public void inicia(Empleado empleado) {
+		//this.iniciaAsistencias();
+		//ventana.muestra(this, empleado);
+		//ventana.muestra(this, empleado);
+	}
 	
 }

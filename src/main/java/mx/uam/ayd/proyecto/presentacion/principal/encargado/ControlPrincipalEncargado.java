@@ -194,11 +194,11 @@ public class ControlPrincipalEncargado {
 	}
 	
 
-//	public void asistenciasEmp(Empleado empleado) {
-//		// TODO Auto-generated method stub
-//		//controlAsistencias.iniciaAsistencias(empleado);
-//		controlAsistencias.inicia(empleado);
-//	}
+	public void asistenciasEmp(Empleado empleado) {
+		// TODO Auto-generated method stub
+		//controlAsistencias.iniciaAsistencias(empleado);
+		controlAsistencias.inicia(empleado);
+	}
 	
 	/**
 	 * Inicia la ventana relacionada con la HU-12
