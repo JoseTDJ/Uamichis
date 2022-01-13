@@ -182,9 +182,69 @@ public class ventanaAsistencias extends JFrame {
 		panel_1_1.setBackground(SystemColor.textHighlight);
 		panel_1_1.setBounds(551, 120, 95, 312);
 		contentPane.add(panel_1_1);
+	}
+		/**
+		 * Metodo que muestra la ventana de control de Asistencias
+		 * @param control
+		 * @param empleado
+		 */
+		public void muestra(controlAsistencias control, Empleado empleado) {
+			LocalDateTime ahora= LocalDateTime.now();
+			int anio= ahora.getYear();
+			int mes = ahora.getMonthValue();
+			int dia= ahora.getDayOfMonth();
+			DayOfWeek nomDia = ahora.getDayOfWeek();
+			String fech=String.valueOf(nomDia)+ ", " +dia+"/"+mes+"/"+anio;
+			this.fecha.setText(fech);
+			String id = String.valueOf(empleado.getIdEmpleado());
+			this.control = control;
+			this.empleado = empleado;
+			this.nombreEmpleado
+					.setText("Nombre: " + empleado.getNombre() + " " + empleado.getApellido());
+			this.encargo.setText("Cargo: " + empleado.getNivel());
+			this.idEmpleado.setText("ID: " +id);
+			barrabuscar.setText("");
+			setVisible(true);
+		}
 		
+		/**
+		 * Metodo que llena la tabla con los datos de todos los empleados
+		 * registrados en la farmacia
+		 * @param servicioEmpleado
+		 */
+		public void llenaTablaEmpleados(ServicioEmpleado servicioEmpleado) {
+			String a[] = new String[6];
+			int asistenciaNum = 0;
+			List<Empleado> empl = servicioEmpleado.recuperaEmpleados();
+			
+			if(tablaAsistencias.getRowCount() == 0) {
+				for(Empleado emp:empl) {
+					a[0] = String.valueOf(emp.getIdEmpleado());
+					a[1] = emp.getNombre()+ " " +emp.getApellido();
+					a[2] = emp.getNivel();
+					a[3] = emp.getTelefono();
+					a[4] = String.valueOf(asistenciaNum);
+					modelo.addRow(a);
+				}
+				tablaAsistencias.setModel(modelo);
+			}
+		}
+		
+		/**
+		 * Cuando un empleado o encargado inicia sesion, 
+		 * su asistencia es inmediatamente registrada en la tabla de asistencias
+		 * @param empleado
+		 */
+		public void agregaAsistencia(Empleado empleado) {
+			this.empleado = empleado;
+			for(int i = 0; i < tablaAsistencias.getRowCount(); i++) {
+				if(empleado.getTelefono() == String.valueOf(tablaAsistencias.getValueAt(i, 3))) {
+					int ValorAsistencia = Integer.parseInt(String.valueOf(tablaAsistencias.getValueAt(i, 4)));
+					ValorAsistencia = ValorAsistencia + 1;
+					tablaAsistencias.setValueAt(String.valueOf(ValorAsistencia), i, 4);
+				}
 	
-		
+			}
 	}
 	
 }

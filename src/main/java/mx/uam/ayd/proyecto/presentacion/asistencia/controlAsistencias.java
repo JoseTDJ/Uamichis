@@ -28,7 +28,15 @@ public class controlAsistencias {
 	public void inicia(Empleado empleado) {
 		//this.iniciaAsistencias();
 		//ventana.muestra(this, empleado);
-		//ventana.muestra(this, empleado);
+		ventana.muestra(this, empleado);
+	}
+	public void asistencia(Empleado empleado) {
+		ventana.agregaAsistencia(empleado);
+		//ventana.agregaAsistencia(empleado);
 	}
 	
+	public void iniciaTablaEmpleados(ServicioEmpleado servicioEmpleado) {
+		ventana.llenaTablaEmpleados(servicioEmpleado);
+		//ventana.llenaTablaEmpleados(servicioEmpleado);
+	}
 }

@@ -11,7 +11,7 @@ import mx.uam.ayd.proyecto.presentacion.listarUsuarios.ControlListarUsuarios;
 import mx.uam.ayd.proyecto.presentacion.monitoreo.ControlMonitoreo;
 import mx.uam.ayd.proyecto.presentacion.principal.empleado.ControlPrincipalEmpleados;
 import mx.uam.ayd.proyecto.presentacion.principal.encargado.ControlPrincipalEncargado;
-
+import mx.uam.ayd.proyecto.presentacion.asistencia.controlAsistencias;
 /**
  * Esta clase lleva el flujo de control de la ventana principal
  * 
@@ -41,13 +41,15 @@ public class ControlInicioSesion {
 	
 	@Autowired
 	private ControlMonitoreo controlmonitoreo;
-	
+	@Autowired
+	private controlAsistencias controlAsistencia;
 	
 	/**
 	 * Inicia el flujo de control de la ventana principal
 	 * 
 	 */
 	public void inicia() {
+		controlAsistencia.iniciaTablaEmpleados(servicioEmpleado);
 		ventana.muestra(this);
 	}
 
@@ -76,13 +78,14 @@ public class ControlInicioSesion {
 			
 			if(empleado.getNivel().equals("empleado")) {
 				controlmonitoreo.registrarInicio(empleado);
-		//		controlAsistencia.asistencia(empleado);
+				controlAsistencia.asistencia(empleado);
 				controlPrincipalEmpleados.inicia(empleado);
 				controlPrincipalEmpleados.mostrarReportes(empleado);
 				ventana.oculta();
+				
 			} if(empleado.getNivel().equals("encargado")) {
 				controlmonitoreo.registrarInicio(empleado);
-			//	controlAsistencia.asistencia(empleado);
+				controlAsistencia.asistencia(empleado);
 				controlPrincipalEncargado.inicia(empleado);
 				controlPrincipalEncargado.mostrarReportes(empleado);
 				ventana.oculta();
