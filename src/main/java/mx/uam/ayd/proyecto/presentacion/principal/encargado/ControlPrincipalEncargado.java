@@ -25,7 +25,7 @@ import mx.uam.ayd.proyecto.presentacion.reporteEmpleados.VentanaNumReporte;
 import mx.uam.ayd.proyecto.presentacion.reporteVenta.ControlReporteVenta;
 import mx.uam.ayd.proyecto.presentacion.reporteInventario.ControlMuestraReportesInventario;
 import mx.uam.ayd.proyecto.presentacion.venta.ControlVenta;
-
+import mx.uam.ayd.proyecto.presentacion.asistencia.controlAsistencias;
 @Slf4j
 @Component
 public class ControlPrincipalEncargado {
@@ -84,7 +84,8 @@ public class ControlPrincipalEncargado {
 	private ControlReporteVenta controlReporteVenta;
 	@Autowired
 	private ControlMuestraReportesInventario controlMuestraReportesInventario;
-
+	@Autowired
+	private controlAsistencias controlAsistencias;
 	
 	/**
 	 * Inicia el flujo de control de la ventana principal

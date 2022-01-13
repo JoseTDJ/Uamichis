@@ -21,7 +21,7 @@ import mx.uam.ayd.proyecto.presentacion.inicioSesion.ControlInicioSesion;
 import mx.uam.ayd.proyecto.presentacion.inventario.ControlCargarArchivo;
 import mx.uam.ayd.proyecto.presentacion.principal.ControlPrincipal;
 import mx.uam.ayd.proyecto.presentacion.principal.empleado.ControlPrincipalEmpleados;
-
+import mx.uam.ayd.proyecto.presentacion.asistencia.controlAsistencias;
 
 @Slf4j
 @SpringBootApplication
@@ -53,6 +53,9 @@ public class ProyectoApplication {
 
 	@Autowired
 	ClienteRepository clienteRepository;
+	
+	@Autowired
+	private controlAsistencias controlAsistencia;
 
 	public static void main(String[] args) {
 
