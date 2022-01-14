@@ -1,0 +1,17 @@
+nombre|compuesto|receta|ubicación|precio|piezas
+Paracetamol|paracetamol|No|C-16|20.00|100
+Trevissage|Isotretinoina|Si|C-16|1200.00|1
+ibuprofeno|ibuprofeno2|No|C-16|70.00|16
+Bisolvon|dextrometorfano|No|C-19|40.00|3
+Antigripal|100 G|No|C-19|10.00|25
+Aliviax|15ML|No|C-19|10.00|1
+Tabcin|10M|No|C-19|10.00|15
+Jarabe|100ML|No|C-19|10.00|17
+Jarabe1|10ML|No|C-19|11.00|18
+Jarabe2|10ML|No|C-19|155.00|18
+Jarabe3|10ML|No|C-19|18.00|15
+Jarabe4|10ML|Si|C-19|146.00|15
+Jarabe5|10ML|No|C-19|186.00|18
+Jarabe6|10ML|No|C-19|18.00|12
+Laritol|loratadina|No|C-16|80.00|6
+Agrifen|Clorfenamina|No|C-16|24.00 
