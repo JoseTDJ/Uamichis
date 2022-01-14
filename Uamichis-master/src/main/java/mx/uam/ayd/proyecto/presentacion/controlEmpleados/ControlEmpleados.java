@@ -152,15 +152,20 @@ public class ControlEmpleados {
 	 * Elimina a empleados de la BD
 	 * @param nombre nombre del empleado a eliminar
 	 */
+	
+	//Metodo para eliminar un empleado
 	public void eliminarEmpleado(List<String> nombre) {
 	
 		try {
+			
+			//mensaje si el usuario se eliminó
 			if (servicioEmpleado.eliminarEmpleado(nombre)) {
 				ventana.muestraDialogoConMensaje("Usuario eliminado exitosamente");
 			}
 			
 		} catch (Exception e) {
-
+			
+			//No se pudo eliminar usuario
 			ventana.muestraDialogoConMensaje("Error al eliminar usario: " + e.getMessage());
 
 		}
