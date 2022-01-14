@@ -288,8 +288,9 @@ public class VentanaControlEmpleados extends JFrame {
 		
 		btnEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//lamando al modelo
 //				modeloEmpleados = (DefaultTableModel) tabla_empleado.getModel();
-//				int a = tabla_empleado.getSelectedRow();
+//				int obtenEmpleado = tabla_empleado.getSelectedRow();
 //				List<String> listaEmpleados = new ArrayList<>();
 //				
 //				try {
@@ -300,10 +301,17 @@ public class VentanaControlEmpleados extends JFrame {
 //					}
 //
 //					if (listaEmpleados.isEmpty()) {
+//						
+//						//Si no se selecciona algun empleado
 //						muestraDialogoConMensaje("Debes de seleccionar a un empleado");
 //					} else {
 //						System.out.println(listaEmpleados.get(0));
-//						int confirmar = JOptionPane.showConfirmDialog(null, "Seguro quieres eliminar a:"  + listaEmpleados);
+//						
+//						int confirmar;
+//						//Confirmacion
+//						confirmar= JOptionPane.showConfirmDialog(null, "Seguro quieres eliminar a:"  + listaEmpleados);
+//							
+//							//se confirma
 //							if(JOptionPane.OK_OPTION==confirmar) {
 //								
 //								control.eliminarEmpleado(listaEmpleados);
@@ -316,10 +324,7 @@ public class VentanaControlEmpleados extends JFrame {
 //					}
 //				} catch (Exception e2) {
 //					// TODO: handle exception
-//				}
-//				
-				
-			
+//				}			
 			}
 		});
 		
