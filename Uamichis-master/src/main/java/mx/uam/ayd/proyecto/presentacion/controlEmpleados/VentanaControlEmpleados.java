@@ -305,7 +305,7 @@ public class VentanaControlEmpleados extends JFrame {
 						//Si no se selecciona algun empleado
 						muestraDialogoConMensaje("Debes de seleccionar a un empleado");
 					}
-					/*
+					
 					else {
 						System.out.println(listaEmpleados.get(0));
 						
@@ -319,7 +319,7 @@ public class VentanaControlEmpleados extends JFrame {
 								control.eliminarEmpleado(listaEmpleados);
 								control.recuperaEmpleados(empleado);
 							}
-					} */
+					} 
 				} catch (Exception e2) {
 					// TODO: handle exception
 				}			
