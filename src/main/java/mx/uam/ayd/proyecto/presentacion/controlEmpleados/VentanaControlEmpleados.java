@@ -240,8 +240,8 @@ public class VentanaControlEmpleados extends JFrame {
 		
 		btnAgregar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				control.iniciaAgregar(empleado); 
-//				oculta();
+				control.iniciaAgregar(empleado); 
+				oculta();
 			}
 		});
 		

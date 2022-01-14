@@ -54,10 +54,10 @@ public class ControlEmpleados {
 	 * Inicia la ventana de Agregar Empleado
 	 * @param empleado que ha iniciado sesion
 	 */
-//	public void iniciaAgregar(Empleado empleado) {
-//		ventanaAgregar.muestra(this, empleado);
-//	}
-//	
+	public void iniciaAgregar(Empleado empleado) {
+		ventanaAgregar.muestra(this, empleado);
+	}
+	
 	/**
 	 * Inicia la ventana de Modificar Empleado
 	 * @param empleado que ha iniciado sesion
@@ -70,29 +70,6 @@ public class ControlEmpleados {
 //		ventanaModificar.muestra(this, empleado, empleados, empleado2);
 //	}
 	
-	/**
-	 * Se agrega a un empleado nuevo
-	 * Y se valida la contraseña para que no sea identica a otro usuario
-	 * @param nombre nombre del empleado
-	 * @param apellido apellido del empleado
-	 * @param edad edad del empleado
-	 * @param direccion direccion del empleado
-	 * @param telefono telefono del empleado
-	 * @param contrasena contrasena del empleado
-	 */
-
-	
-//	public void agregarEmpleado( String nombre, String apellido, String nivel, int edad, String direccion, String telefono, String usuario ,String contrasena) {
-//
-//		try {
-//			servicioEmpleado.agregarEmpleado(nombre, apellido, nivel, edad, direccion, telefono, usuario,contrasena);
-//			ventanaAgregar.muestraDialogoConMensaje("Usuario agregado exitosamente");
-//			
-//		} catch (Exception e) {
-//			ventanaAgregar.muestraDialogoConMensaje("Error al agregar usario: " + e.getMessage());
-//		}
-//		
-//	}
 	
 	public Empleado validarContrasena(String contrasena) {
 		
