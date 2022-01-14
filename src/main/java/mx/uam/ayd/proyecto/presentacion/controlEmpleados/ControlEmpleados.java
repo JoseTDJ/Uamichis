@@ -21,8 +21,8 @@ public class ControlEmpleados {
 	@Autowired
 	private VentanaControlEmpleados ventana;
 	
-//	@Autowired
-//	private VentanaAgregarEmpleado ventanaAgregar;
+	@Autowired
+	private VentanaAgregarEmpleado ventanaAgregar;
 
 //	
 //	@Autowired
@@ -121,8 +121,9 @@ public class ControlEmpleados {
 
 	}
 	
+	
 	/**
-	 * Actualiza el empleado 
+	 * Se agrega a un empleado nuevo
 	 * Y se valida la contraseña para que no sea identica a otro usuario
 	 * @param nombre nombre del empleado
 	 * @param apellido apellido del empleado
@@ -131,20 +132,21 @@ public class ControlEmpleados {
 	 * @param telefono telefono del empleado
 	 * @param contrasena contrasena del empleado
 	 */
-//	public void actualizarEmpleado(String nombre, String apellido, String nivel, int edad, String direccion, String telefono,  String usuario, String contrasena) {
-//		try {
-//				
-//				servicioEmpleado.actualizarEmpleado(nombre, apellido, nivel, edad, direccion, telefono, usuario, contrasena);
-//				ventanaModificar.muestraDialogoConMensaje("Usuario modificado exitosamente");
-//		
-//			
-//		} catch (Exception e) {
-//			
-//			ventanaAgregar.muestraDialogoConMensaje("Error al modificar usario: " + e.getMessage());
-//		}
-//		
-//	}
-//	
+	public void agregarEmpleado( String nombre, String apellido, String nivel, int edad, String direccion, String telefono, String usuario ,String contrasena) {
+
+		try {
+			servicioEmpleado.agregarEmpleado(nombre, apellido, nivel, edad, direccion, telefono, usuario,contrasena);
+			ventanaAgregar.muestraDialogoConMensaje("Usuario agregado exitosamente");
+			
+		} catch (Exception e) {
+			ventanaAgregar.muestraDialogoConMensaje("Error al agregar usario: " + e.getMessage());
+		}
+		
+	}
+	
+	
+	
+	
 	
 	
 	
