@@ -288,43 +288,41 @@ public class VentanaControlEmpleados extends JFrame {
 		
 		btnEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//lamando al modelo
-//				modeloEmpleados = (DefaultTableModel) tabla_empleado.getModel();
-//				int obtenEmpleado = tabla_empleado.getSelectedRow();
-//				List<String> listaEmpleados = new ArrayList<>();
-//				
-//				try {
-//					for (int i = 0; i < tabla_empleado.getRowCount(); i++) {
-//						if (String.valueOf(tabla_empleado.getValueAt(i, 6)) != "false") {
-//							listaEmpleados.add((String) tabla_empleado.getValueAt(i, 1));
-//						}
-//					}
-//
-//					if (listaEmpleados.isEmpty()) {
-//						
-//						//Si no se selecciona algun empleado
-//						muestraDialogoConMensaje("Debes de seleccionar a un empleado");
-//					} else {
-//						System.out.println(listaEmpleados.get(0));
-//						
-//						int confirmar;
-//						//Confirmacion
-//						confirmar= JOptionPane.showConfirmDialog(null, "Seguro quieres eliminar a:"  + listaEmpleados);
-//							
-//							//se confirma
-//							if(JOptionPane.OK_OPTION==confirmar) {
-//								
-//								control.eliminarEmpleado(listaEmpleados);
-//								control.recuperaEmpleados(empleado);
-//							}
-//						
-//						
-//
-//						
-//					}
-//				} catch (Exception e2) {
-//					// TODO: handle exception
-//				}			
+				//llamando al modelo
+				modeloEmpleados = (DefaultTableModel) tabla_empleado.getModel();
+				int obtenEmpleado = tabla_empleado.getSelectedRow();
+				List<String> listaEmpleados = new ArrayList<>();
+				
+				try {
+					for (int i = 0; i < tabla_empleado.getRowCount(); i++) {
+						if (String.valueOf(tabla_empleado.getValueAt(i, 6)) != "false") {
+							listaEmpleados.add((String) tabla_empleado.getValueAt(i, 1));
+						}
+					}
+
+					if (listaEmpleados.isEmpty()) {
+						
+						//Si no se selecciona algun empleado
+						muestraDialogoConMensaje("Debes de seleccionar a un empleado");
+					}
+					/*
+					else {
+						System.out.println(listaEmpleados.get(0));
+						
+						int confirmar;
+						//Confirmacion
+						confirmar= JOptionPane.showConfirmDialog(null, "Seguro quieres eliminar a:"  + listaEmpleados);
+							
+							//se confirma
+							if(JOptionPane.OK_OPTION==confirmar) {
+								
+								control.eliminarEmpleado(listaEmpleados);
+								control.recuperaEmpleados(empleado);
+							}
+					} */
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}			
 			}
 		});
 		
