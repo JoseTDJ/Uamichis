@@ -130,19 +130,19 @@ public class ControlEmpleados {
 	 * @param telefono telefono del empleado
 	 * @param contrasena contrasena del empleado
 	 */
-//	public void actualizarEmpleado(String nombre, String apellido, String nivel, int edad, String direccion, String telefono,  String usuario, String contrasena) {
-//		try {
-//				
-//				servicioEmpleado.actualizarEmpleado(nombre, apellido, nivel, edad, direccion, telefono, usuario, contrasena);
-//				ventanaModificar.muestraDialogoConMensaje("Usuario modificado exitosamente");
-//		
-//			
-//		} catch (Exception e) {
-//			
-////			ventanaAgregar.muestraDialogoConMensaje("Error al modificar usario: " + e.getMessage());
-//		}
-//		
-//	}
+	public void actualizarEmpleado(String nombre, String apellido, String nivel, int edad, String direccion, String telefono,  String usuario, String contrasena) {
+		try {
+				
+				servicioEmpleado.actualizarEmpleado(nombre, apellido, nivel, edad, direccion, telefono, usuario, contrasena);
+				ventanaModificar.muestraDialogoConMensaje("Usuario modificado exitosamente");
+		
+			
+		} catch (Exception e) {
+			
+//			ventanaAgregar.muestraDialogoConMensaje("Error al modificar usario: " + e.getMessage());
+		}
+		
+	}
 	
 	
 	

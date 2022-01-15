@@ -412,11 +412,13 @@ public class VentanaModificarEmpleado extends JFrame {
 			if (txtNombre.getText().equals("") || txtApellidos.getText().equals("") || txtEdad.getText().equals("") || 
 					txtDireccion.getText().equals("") || txtTelefono.getText().equals("") || txtContrasena.getText().equals("")) {
 				muestraDialogoConMensaje("Hay un campo sin llenar");
-			} else {
+			} 
+			else {
 				char caracter = txtContrasena.getText().charAt(0);
 				if (Character.isUpperCase(caracter) == false ) {
 					muestraDialogoConMensaje("La contraseña debe de tener la primera letra en mayuscula");
-				} else if(txtContrasena.getText().length() < 8) {
+				} 
+				else if(txtContrasena.getText().length() < 8) {
 					muestraDialogoConMensaje("La contraseña debe de tener 8 caracteres ");						
 				} else {
 					empleado2 = control.validarContrasena(txtContrasena.getText());
@@ -433,8 +435,8 @@ public class VentanaModificarEmpleado extends JFrame {
 
 							} else {
 								int edad = Integer.parseInt(txtEdad.getText());
-//								control.actualizarEmpleado(txtNombre.getText(), txtApellidos.getText(), txtNivel2.getText(), edad, 
-//									txtDireccion.getText(), txtTelefono.getText(), txtUsuario.getText(),txtContrasena.getText());
+								control.actualizarEmpleado(txtNombre.getText(), txtApellidos.getText(), txtNivel2.getText(), edad, 
+									txtDireccion.getText(), txtTelefono.getText(), txtUsuario.getText(),txtContrasena.getText());
 								oculta();
 								control.inicia(empleadoSesion);
 								control.recuperaEmpleados(empleadoSesion);
