@@ -7,10 +7,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -19,6 +21,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.BadLocationException;
+import javax.swing.text.Document;
 
 import mx.uam.ayd.proyecto.negocio.modelo.Empleado;
 import java.awt.SystemColor;
@@ -120,34 +123,34 @@ public class VentanaModificarEmpleado extends JFrame {
 	
 	txtNombre = new JTextField();
 	txtNombre.setEditable(false);
-//	txtNombre.getDocument().addDocumentListener(new DocumentListener() {
-//		@Override
-//		public void changedUpdate(DocumentEvent arg0) {
-//			try {
-//				validaCampos(arg0);
-//			} catch (BadLocationException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//
-//		@Override
-//		public void insertUpdate(DocumentEvent arg0) {
-//			try {
-//				validaCampos(arg0);
-//			} catch (BadLocationException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//
-//		@Override
-//		public void removeUpdate(DocumentEvent arg0) {
-//			try {
-//				validaCampos(arg0);
-//			} catch (BadLocationException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//	});
+	txtNombre.getDocument().addDocumentListener(new DocumentListener() {
+		@Override
+		public void changedUpdate(DocumentEvent arg0) {
+			try {
+				validaCampos(arg0);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+
+		@Override
+		public void insertUpdate(DocumentEvent arg0) {
+			try {
+				validaCampos(arg0);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+
+		@Override
+		public void removeUpdate(DocumentEvent arg0) {
+			try {
+				validaCampos(arg0);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	});
 	
 	txtNombre.setBounds(98, 52, 167, 19);
 	panel2.add(txtNombre);
@@ -159,34 +162,34 @@ public class VentanaModificarEmpleado extends JFrame {
 	
 	txtApellidos = new JTextField();
 	txtApellidos.setEditable(false);
-//	txtApellidos.getDocument().addDocumentListener(new DocumentListener() {
-//		@Override
-//		public void changedUpdate(DocumentEvent arg0) {
-//			try {
-//				validaCampos(arg0);
-//			} catch (BadLocationException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//
-//		@Override
-//		public void insertUpdate(DocumentEvent arg0) {
-//			try {
-//				validaCampos(arg0);
-//			} catch (BadLocationException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//
-//		@Override
-//		public void removeUpdate(DocumentEvent arg0) {
-//			try {
-//				validaCampos(arg0);
-//			} catch (BadLocationException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//	});
+	txtApellidos.getDocument().addDocumentListener(new DocumentListener() {
+		@Override
+		public void changedUpdate(DocumentEvent arg0) {
+			try {
+				validaCampos(arg0);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+
+		@Override
+		public void insertUpdate(DocumentEvent arg0) {
+			try {
+				validaCampos(arg0);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+
+		@Override
+		public void removeUpdate(DocumentEvent arg0) {
+			try {
+				validaCampos(arg0);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	});
 	txtApellidos.setColumns(10);
 	txtApellidos.setBounds(98, 103, 167, 19);
 	panel2.add(txtApellidos);
@@ -197,34 +200,34 @@ public class VentanaModificarEmpleado extends JFrame {
 	panel2.add(lblEdad);
 	
 	txtEdad = new JTextField();
-//	txtEdad.getDocument().addDocumentListener(new DocumentListener() {
-//		@Override
-//		public void changedUpdate(DocumentEvent arg0) {
-//			try {
-//				validaCampos(arg0);
-//			} catch (BadLocationException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//
-//		@Override
-//		public void insertUpdate(DocumentEvent arg0) {
-//			try {
-//				validaCampos(arg0);
-//			} catch (BadLocationException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//
-//		@Override
-//		public void removeUpdate(DocumentEvent arg0) {
-//			try {
-//				validaCampos(arg0);
-//			} catch (BadLocationException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//	});
+	txtEdad.getDocument().addDocumentListener(new DocumentListener() {
+		@Override
+		public void changedUpdate(DocumentEvent arg0) {
+			try {
+				validaCampos(arg0);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+
+		@Override
+		public void insertUpdate(DocumentEvent arg0) {
+			try {
+				validaCampos(arg0);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+
+		@Override
+		public void removeUpdate(DocumentEvent arg0) {
+			try {
+				validaCampos(arg0);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	});
 	txtEdad.addKeyListener(new KeyAdapter() {
 		@Override
 		public void keyTyped(KeyEvent e) {
@@ -243,34 +246,34 @@ public class VentanaModificarEmpleado extends JFrame {
 	panel2.add(lblDireccion);
 	
 	txtDireccion = new JTextField();
-//	txtDireccion.getDocument().addDocumentListener(new DocumentListener() {
-//		@Override
-//		public void changedUpdate(DocumentEvent arg0) {
-//			try {
-//				validaCampos(arg0);
-//			} catch (BadLocationException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//
-//		@Override
-//		public void insertUpdate(DocumentEvent arg0) {
-//			try {
-//				validaCampos(arg0);
-//			} catch (BadLocationException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//
-//		@Override
-//		public void removeUpdate(DocumentEvent arg0) {
-//			try {
-//				validaCampos(arg0);
-//			} catch (BadLocationException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//	});
+	txtDireccion.getDocument().addDocumentListener(new DocumentListener() {
+		@Override
+		public void changedUpdate(DocumentEvent arg0) {
+			try {
+				validaCampos(arg0);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+
+		@Override
+		public void insertUpdate(DocumentEvent arg0) {
+			try {
+				validaCampos(arg0);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+
+		@Override
+		public void removeUpdate(DocumentEvent arg0) {
+			try {
+				validaCampos(arg0);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	});
 	txtDireccion.setColumns(10);
 	txtDireccion.setBounds(412, 49, 167, 19);
 	panel2.add(txtDireccion);
@@ -280,34 +283,34 @@ public class VentanaModificarEmpleado extends JFrame {
 	panel2.add(lblTelefono);
 	
 	txtTelefono = new JTextField();
-//	txtTelefono.getDocument().addDocumentListener(new DocumentListener() {
-//		@Override
-//		public void changedUpdate(DocumentEvent arg0) {
-//			try {
-//				validaCampos(arg0);
-//			} catch (BadLocationException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//
-//		@Override
-//		public void insertUpdate(DocumentEvent arg0) {
-//			try {
-//				validaCampos(arg0);
-//			} catch (BadLocationException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//
-//		@Override
-//		public void removeUpdate(DocumentEvent arg0) {
-//			try {
-//				validaCampos(arg0);
-//			} catch (BadLocationException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//	});
+	txtTelefono.getDocument().addDocumentListener(new DocumentListener() {
+		@Override
+		public void changedUpdate(DocumentEvent arg0) {
+			try {
+				validaCampos(arg0);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+
+		@Override
+		public void insertUpdate(DocumentEvent arg0) {
+			try {
+				validaCampos(arg0);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+
+		@Override
+		public void removeUpdate(DocumentEvent arg0) {
+			try {
+				validaCampos(arg0);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	});
 	
 	txtTelefono.addKeyListener(new KeyAdapter() {
 		@Override
@@ -327,34 +330,34 @@ public class VentanaModificarEmpleado extends JFrame {
 	panel2.add(lblContrasena);
 	
 	txtContrasena = new JTextField();
-//	txtContrasena.getDocument().addDocumentListener(new DocumentListener() {
-//		@Override
-//		public void changedUpdate(DocumentEvent arg0) {
-//			try {
-//				validaCampos(arg0);
-//			} catch (BadLocationException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//
-//		@Override
-//		public void insertUpdate(DocumentEvent arg0) {
-//			try {
-//				validaCampos(arg0);
-//			} catch (BadLocationException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//
-//		@Override
-//		public void removeUpdate(DocumentEvent arg0) {
-//			try {
-//				validaCampos(arg0);
-//			} catch (BadLocationException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//	});
+	txtContrasena.getDocument().addDocumentListener(new DocumentListener() {
+		@Override
+		public void changedUpdate(DocumentEvent arg0) {
+			try {
+				validaCampos(arg0);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+
+		@Override
+		public void insertUpdate(DocumentEvent arg0) {
+			try {
+				validaCampos(arg0);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+
+		@Override
+		public void removeUpdate(DocumentEvent arg0) {
+			try {
+				validaCampos(arg0);
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+	});
 	
 	txtContrasena.setColumns(10);
 	txtContrasena.setBounds(412, 155, 167, 19);
@@ -387,7 +390,7 @@ public class VentanaModificarEmpleado extends JFrame {
 	btnCancelar.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			control.inicia(empleadoSesion);
-//			oculta();
+			oculta();
 		}
 	});
 	btnCancelar.setBackground(Color.RED);
@@ -404,31 +407,31 @@ public class VentanaModificarEmpleado extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			if (txtNombre.getText().equals("") || txtApellidos.getText().equals("") || txtEdad.getText().equals("") || 
 					txtDireccion.getText().equals("") || txtTelefono.getText().equals("") || txtContrasena.getText().equals("")) {
-//				muestraDialogoConMensaje("Hay un campo sin llenar");
+				muestraDialogoConMensaje("Hay un campo sin llenar");
 			} else {
 				char caracter = txtContrasena.getText().charAt(0);
 				if (Character.isUpperCase(caracter) == false ) {
-//					muestraDialogoConMensaje("La contraseña debe de tener la primera letra en mayuscula");
+					muestraDialogoConMensaje("La contraseña debe de tener la primera letra en mayuscula");
 				} else if(txtContrasena.getText().length() < 8) {
-//					muestraDialogoConMensaje("La contraseña debe de tener 8 caracteres ");						
+					muestraDialogoConMensaje("La contraseña debe de tener 8 caracteres ");						
 				} else {
 					empleado2 = control.validarContrasena(txtContrasena.getText());
 					if (empleado2 != null) {
-//						muestraDialogoConMensaje("La contraseña ya le pertenece a otro usuario");						
+						muestraDialogoConMensaje("La contraseña ya le pertenece a otro usuario");						
 
 					} else {
 						empleado2 = control.validarUsuario(txtUsuario.getText());
 						if (empleado2 != null) {
-//							muestraDialogoConMensaje("El usuario ya le pertenece a otro empleado");						
+							muestraDialogoConMensaje("El usuario ya le pertenece a otro empleado");						
 						} else {
 							if (!txtNivel2.getText().equals("empleado") && !txtNivel2.getText().equals("encargado")) {
-//								muestraDialogoConMensaje("Solo hay dos cargos [empleado] o [encargado] no puedes poner otra cosa");						
+								muestraDialogoConMensaje("Solo hay dos cargos [empleado] o [encargado] no puedes poner otra cosa");						
 
 							} else {
 								int edad = Integer.parseInt(txtEdad.getText());
 //								control.actualizarEmpleado(txtNombre.getText(), txtApellidos.getText(), txtNivel2.getText(), edad, 
 //									txtDireccion.getText(), txtTelefono.getText(), txtUsuario.getText(),txtContrasena.getText());
-//								oculta();
+								oculta();
 								control.inicia(empleadoSesion);
 								control.recuperaEmpleados(empleadoSesion);
 							}
@@ -448,4 +451,85 @@ public class VentanaModificarEmpleado extends JFrame {
 	
 	
 	}
+	
+	/**
+	 * Muestra la ventana de Modificar Empleado
+	 * @param control control que lleva el flujo 
+	 * @param empleado empleado que ha iniciado sesion
+	 * @param empleados muestra una lista de empleados que estan en la BD
+	 * @param empleado3 empleado3 que se desea modificar 
+	 */
+	public void muestra(ControlEmpleados control, Empleado empleado, List<Empleado> empleados, Empleado empleado3) {
+		String id = String.valueOf(empleado.getIdEmpleado());
+		this.control = control;
+		this.empleadoSesion = empleado;
+		this.empleado2 = empleado3;
+		this.txtNombreEmpleado.setText(empleado.getNombre() + " " + empleado.getApellido());
+		this.txtNivel.setText(empleado.getNivel() + ":");
+		this.txtId.setText(id);
+		
+		String id2 = String.valueOf(empleado3.getIdEmpleado());
+		String edad2 = String.valueOf(empleado3.getEdad());
+		this.txtId2.setText(id2);
+		this.txtNombre.setText(empleado3.getNombre());
+		this.txtApellidos.setText(empleado3.getApellido());
+		this.txtUsuario.setText(empleado3.getUsuario());
+		this.txtEdad.setText(edad2);
+		this.txtDireccion.setText(empleado3.getDireccion());
+		this.txtTelefono.setText(empleado3.getTelefono());
+		this.txtNivel2.setText(empleado3.getNivel());
+		this.txtContrasena.setText(empleado3.getPassword());
+
+		setVisible(true);
+
+	}
+	
+	/**
+	 * Activa el boton de guardar una vez que se han realizado cambios en el empleado
+	 * y los campos son validos 
+	 * @param evt evento en el docuemnt
+	 * @throws BadLocationException detecta si la referencia en el modelo del document es equivocada
+	 */
+	private void validaCampos(DocumentEvent evt) throws BadLocationException {
+		Document doc = evt.getDocument();
+		boolean hayCambio = true;
+		String valorCadena = doc.getText(0, doc.getLength());
+		if (valorCadena.equals(String.valueOf(empleadoSesion.getIdEmpleado())) || valorCadena.equals(empleadoSesion.getNombre()) || valorCadena.equals(empleadoSesion.getApellido()) 
+				|| valorCadena.equals(empleadoSesion.getDireccion()) || valorCadena.equals(String.valueOf(empleadoSesion.getEdad()))
+				|| valorCadena.equals(empleadoSesion.getTelefono())|| valorCadena.equals(empleadoSesion.getPassword())) {
+			hayCambio = false;
+		}
+		btnGuardar.setEnabled(hayCambio);
+	}
+	
+	/**
+	 * Limpia tabla
+	 */
+	public void limpiarTablas() {
+		if (tabla_empleado.getRowCount() > 0) {
+			int filas = tabla_empleado.getRowCount();
+			try {
+				for (int i = 0; filas > i; i++) {
+					modeloEmpleados.removeRow(0);
+				}
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Error al limpiar la tabla empleados.");			}
+		}
+	}
+	
+	/**
+	 * Oculata la ventana de Modificar Empleado
+	 */
+	public void oculta() {
+		setVisible(false);
+	}
+	
+	/**
+	 * Muestra un mensaje en pantalla
+	 * @param mensaje mensaje que se quiere mostrar en pantalla
+	 */
+	public void muestraDialogoConMensaje(String mensaje ) {
+		JOptionPane.showMessageDialog(this , mensaje);
+	}
+	
 }
