@@ -248,40 +248,40 @@ public class VentanaControlEmpleados extends JFrame {
 		
 		btnModificar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				int contSel = 0;
-//				int contNoSel = 0;
-//				String nombre = null;
-//				try {
-//					for (int i = 0; i < tabla_empleado.getRowCount(); i++) {
-//						if (String.valueOf(tabla_empleado.getValueAt(i, 6)) != "false" && String.valueOf(tabla_empleado.getValueAt(i, 6)) != "null") {
-//							nombre = (String) tabla_empleado.getValueAt(i, 1);
-//							contSel++;
-//						} else {
-//							contNoSel++;
-//						}
-//					}
-//					if (contSel == 1) {
+				int contSel = 0;
+				int contNoSel = 0;
+				String nombre = null;
+				try {
+					for (int i = 0; i < tabla_empleado.getRowCount(); i++) {
+						if (String.valueOf(tabla_empleado.getValueAt(i, 6)) != "false" && String.valueOf(tabla_empleado.getValueAt(i, 6)) != "null") {
+							nombre = (String) tabla_empleado.getValueAt(i, 1);
+							contSel++;
+						} else {
+							contNoSel++;
+						}
+					}
+					if (contSel == 1) {
 //						control.iniciaModificar(empleado, nombre);
-//						oculta();
-//					} else {
-//						if (nombre == null) {
-//							System.out.println(nombre);
-//							JOptionPane.showMessageDialog(null, "No has seleccionado ningun empleado!", "Error!",
-//									JOptionPane.WARNING_MESSAGE);
-//						} else {
-//							
-//
-//							JOptionPane.showMessageDialog(null, "Solo puedes editar un empleado a la vez!", "Error!",
-//									JOptionPane.WARNING_MESSAGE);
-//						}
-//					}
-//						
-//					
-//
-//				} catch (Exception e2) {
-//					System.out.println(e2);
-//					JOptionPane.showMessageDialog(null, "Error al leer la tabla.");
-//				}
+						oculta();
+					} else {
+						if (nombre == null) {
+							System.out.println(nombre);
+							JOptionPane.showMessageDialog(null, "No has seleccionado ningun empleado!", "Error!",
+									JOptionPane.WARNING_MESSAGE);
+						} else {
+							
+
+							JOptionPane.showMessageDialog(null, "Solo puedes editar un empleado a la vez!", "Error!",
+									JOptionPane.WARNING_MESSAGE);
+						}
+					}
+						
+					
+
+				} catch (Exception e2) {
+					System.out.println(e2);
+					JOptionPane.showMessageDialog(null, "Error al leer la tabla.");
+				}
 			}
 		});
 		

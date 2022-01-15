@@ -23,9 +23,13 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 
+import org.springframework.stereotype.Component;
+
 import mx.uam.ayd.proyecto.negocio.modelo.Empleado;
 import java.awt.SystemColor;
 
+@SuppressWarnings("serial")
+@Component
 public class VentanaModificarEmpleado extends JFrame {
 
 	private ControlEmpleados control;
