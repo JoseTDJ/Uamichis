@@ -261,7 +261,7 @@ public class VentanaControlEmpleados extends JFrame {
 						}
 					}
 					if (contSel == 1) {
-//						control.iniciaModificar(empleado, nombre);
+						control.iniciaModificar(empleado, nombre);
 						oculta();
 					} else {
 						if (nombre == null) {

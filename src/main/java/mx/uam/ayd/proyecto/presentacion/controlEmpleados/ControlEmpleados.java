@@ -23,10 +23,9 @@ public class ControlEmpleados {
 	
 //	@Autowired
 //	private VentanaAgregarEmpleado ventanaAgregar;
-
-//	
-//	@Autowired
-//	private VentanaModificarEmpleado ventanaModificar;
+	
+	@Autowired
+	private VentanaModificarEmpleado ventanaModificar;
 	
 	@Autowired
 	private ServicioEmpleado servicioEmpleado;
@@ -63,12 +62,12 @@ public class ControlEmpleados {
 	 * @param empleado que ha iniciado sesion
 	 * @param nombre nombre del empleado que se quiere modificar
 	 */
-//	public void iniciaModificar(Empleado empleado, String nombre) {
-//		List<Empleado> empleados = servicioEmpleado.recuperaEmpleados();
-//		Empleado empleado2 = servicioEmpleado.buscarEmpleado(nombre);
-//
-//		ventanaModificar.muestra(this, empleado, empleados, empleado2);
-//	}
+	public void iniciaModificar(Empleado empleado, String nombre) {
+		List<Empleado> empleados = servicioEmpleado.recuperaEmpleados();
+		Empleado empleado2 = servicioEmpleado.buscarEmpleado(nombre);
+
+		ventanaModificar.muestra(this, empleado, empleados, empleado2);
+	}
 	
 	/**
 	 * Se agrega a un empleado nuevo
@@ -140,11 +139,10 @@ public class ControlEmpleados {
 //			
 //		} catch (Exception e) {
 //			
-//			ventanaAgregar.muestraDialogoConMensaje("Error al modificar usario: " + e.getMessage());
+////			ventanaAgregar.muestraDialogoConMensaje("Error al modificar usario: " + e.getMessage());
 //		}
 //		
 //	}
-//	
 	
 	
 	
