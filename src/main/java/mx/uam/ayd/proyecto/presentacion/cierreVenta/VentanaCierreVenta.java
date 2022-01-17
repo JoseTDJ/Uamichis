@@ -61,7 +61,7 @@ public class VentanaCierreVenta extends JFrame {
 
 	public VentanaCierreVenta() {
 		setTitle("Farmapass - Cierre de Venta");
-		setBounds(100, 100, 668, 443);
+		setBounds(100, 100, 730, 486);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -104,12 +104,12 @@ public class VentanaCierreVenta extends JFrame {
 
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.WHITE);
-		panel.setBounds(15, 162, 509, 135);
+		panel.setBounds(15, 162, 554, 135);
 		panel.setLayout(null);
 
 		JScrollPane scrollPaneCierreVenta = new JScrollPane();
 		scrollPaneCierreVenta.setBackground(Color.WHITE);
-		scrollPaneCierreVenta.setBounds(21, 0, 474, 135);
+		scrollPaneCierreVenta.setBounds(26, 0, 504, 135);
 		panel.add(scrollPaneCierreVenta);
 
 		tabla_inventario = new JTable(
@@ -117,7 +117,7 @@ public class VentanaCierreVenta extends JFrame {
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.WHITE);
-		panel_1.setBounds(5, 5, 644, 44);
+		panel_1.setBounds(5, 5, 701, 44);
 		panel_1.setLayout(null);
 		panel_1.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
 
@@ -127,20 +127,20 @@ public class VentanaCierreVenta extends JFrame {
 		txtNombreEmpleado.setHorizontalAlignment(SwingConstants.CENTER);
 		txtNombreEmpleado.setEditable(false);
 		txtNombreEmpleado.setColumns(10);
-		txtNombreEmpleado.setBounds(147, 10, 358, 24);
+		txtNombreEmpleado.setBounds(212, 10, 440, 24);
 		panel_1.add(txtNombreEmpleado);
 
 		JPanel panel_3 = new JPanel();
 		panel_3.setBackground(Color.WHITE);
-		panel_3.setBounds(5, 112, 519, 40);
+		panel_3.setBounds(21, 112, 548, 40);
 
 		JPanel panel_4 = new JPanel();
-		panel_4.setBounds(534, 59, 115, 337);
+		panel_4.setBounds(579, 59, 127, 380);
 		panel_4.setBackground(SystemColor.textHighlight);
 		
 				btnFinalizar = new JButton("Finalizar");
 				btnFinalizar.setFont(new Font("Josefin Sans", Font.PLAIN, 16));
-				btnFinalizar.setBounds(293, 344, 104, 30);
+				btnFinalizar.setBounds(327, 391, 104, 30);
 				btnFinalizar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						control.cerrarSesion(empleado);
@@ -149,7 +149,7 @@ public class VentanaCierreVenta extends JFrame {
 		
 				JButton btnCancelar = new JButton("Cancelar");
 				btnCancelar.setFont(new Font("Josefin Sans", Font.PLAIN, 16));
-				btnCancelar.setBounds(407, 344, 104, 30);
+				btnCancelar.setBounds(445, 391, 104, 30);
 				btnCancelar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						control.cancelaCierreVenta(empleado);
@@ -158,10 +158,10 @@ public class VentanaCierreVenta extends JFrame {
 					}
 				});
 		
-		//Boton para generar PDF ---------------
+		//Boton para generar PDF de ventas---------------
 		JButton btnGenera = new JButton("Ventas PDF");
 		btnGenera.setFont(new Font("Josefin Sans", Font.PLAIN, 16));
-		btnGenera.setBounds(101, 346, 127, 26);
+		btnGenera.setBounds(119, 391, 137, 30);
 		btnGenera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				control.generaPDF(tabla_venta);
@@ -181,19 +181,19 @@ public class VentanaCierreVenta extends JFrame {
 		txtNivel.setBackground(Color.WHITE);
 		txtNivel.setEditable(false);
 		txtNivel.setColumns(10);
-		txtNivel.setBounds(22, 10, 100, 24);
+		txtNivel.setBounds(31, 10, 146, 24);
 		panel_1.add(txtNivel);
 		panel_4.setLayout(null);
 		panel_3.setLayout(null);
 
 		JButton btnInventario = new JButton("Inventario");
 		btnInventario.setFont(new Font("Josefin Sans", Font.PLAIN, 16));
-		btnInventario.setBounds(27, 10, 120, 23);
+		btnInventario.setBounds(42, 10, 120, 23);
 		panel_3.add(btnInventario);
 
 		JButton btnVentas = new JButton("Ventas");
 		btnVentas.setFont(new Font("Josefin Sans", Font.PLAIN, 16));
-		btnVentas.setBounds(186, 10, 120, 23);
+		btnVentas.setBounds(226, 10, 120, 23);
 		btnVentas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				limpiarTablas();
@@ -214,7 +214,7 @@ public class VentanaCierreVenta extends JFrame {
 
 		JButton btnPedidos = new JButton("Pedidos");
 		btnPedidos.setFont(new Font("Josefin Sans", Font.PLAIN, 16));
-		btnPedidos.setBounds(348, 10, 120, 23);
+		btnPedidos.setBounds(401, 10, 120, 23);
 		btnPedidos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				limpiarTablas();
@@ -233,7 +233,7 @@ public class VentanaCierreVenta extends JFrame {
 		contentPane.add(panel_4);
 		
 				JLabel lblCierreVenta = new JLabel("DETALLE DE CIERRE DE VENTA");
-				lblCierreVenta.setBounds(21, 64, 474, 21);
+				lblCierreVenta.setBounds(129, 70, 350, 21);
 				contentPane.add(lblCierreVenta);
 				lblCierreVenta.setFont(new Font("Josefin Sans", Font.BOLD, 16));
 				lblCierreVenta.setBackground(Color.WHITE);
@@ -241,8 +241,24 @@ public class VentanaCierreVenta extends JFrame {
 				
 				JLabel lblNewLabel = new JLabel("");
 				lblNewLabel.setIcon(new ImageIcon(VentanaCierreVenta.class.getResource("/mx/uam/ayd/proyecto/presentacion/cierreVenta/pdficon.png")));
-				lblNewLabel.setBounds(40, 340, 48, 44);
+				lblNewLabel.setBounds(47, 383, 48, 44);
 				contentPane.add(lblNewLabel);
+				
+				JLabel lblNewLabel_1 = new JLabel("");
+				lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\yessa\\Desktop\\Farmapass\\src\\main\\java\\mx\\uam\\ayd\\proyecto\\presentacion\\cierreVenta\\pdficon.png"));
+				lblNewLabel_1.setBounds(47, 317, 48, 44);
+				contentPane.add(lblNewLabel_1);
+				
+				//Botón que genera pdf de inventario -------------------------
+				JButton btnPdfInventario = new JButton("Inventario PDF"); 
+				btnPdfInventario.setFont(new Font("Josefin Sans", Font.PLAIN, 16));
+				btnPdfInventario.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						control.generaInventarioPdf(tabla_inventario);
+					}
+				});
+				btnPdfInventario.setBounds(119, 326, 153, 30);
+				contentPane.add(btnPdfInventario);
 	}
 
 	public void muestra(ControlCierreVenta control, Empleado empleado) {
